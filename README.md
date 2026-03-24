@@ -1,4 +1,4 @@
-# Son of App (sonof)
+# Son of <Agent>
 
 custom client for managing prs made by OpenClaw
 
