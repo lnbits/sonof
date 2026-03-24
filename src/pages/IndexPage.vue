@@ -133,35 +133,32 @@
                 </div>
               </q-banner>
 
-              <div :class="composerShellClass">
-                <q-toolbar class="q-px-md q-py-sm">
-                  <div class="col-auto">
-                    <q-btn flat round icon="add" @click="openImagePicker" />
-                  </div>
+                              <q-input
+                  v-model="composer"
+                  :dark="$q.dark.isActive"
+                  outlined
+                  rounded
+                  autogrow
+                  :class="composerInputClass"
+                  input-class="text-subtitle1"
+                  placeholder="Build anything"
+                  @keyup.enter.exact.prevent="handleSend"
+                >
+                  <template #prepend>
+                    <q-btn flat round dense icon="add" @click="openImagePicker" />
+                  </template>
 
-                  <div class="col q-px-sm">
-                    <q-input
-                      v-model="composer"
-                      :dark="$q.dark.isActive"
-                      borderless
-                      autogrow
-                      placeholder="Build anything"
-                      @keyup.enter.exact.prevent="handleSend"
-                    />
-                  </div>
-
-                  <div class="col-auto">
+                  <template #append>
                     <q-btn
+                      flat
                       round
-                      color="white"
-                      text-color="dark"
+                      dense
                       icon="send"
                       :loading="state.sending"
                       @click="handleSend"
                     />
-                  </div>
-                </q-toolbar>
-              </div>
+                  </template>
+                </q-input>
             </div>
           </div>
         </div>
@@ -195,35 +192,32 @@
               </div>
             </q-banner>
 
-            <div :class="composerShellClass">
-              <q-toolbar class="q-px-md q-py-sm">
-                <div class="col-auto">
-                  <q-btn flat round icon="add" @click="openImagePicker" />
-                </div>
+                          <q-input
+                v-model="composer"
+                :dark="$q.dark.isActive"
+                outlined
+                rounded
+                autogrow
+                :class="composerInputClass"
+                input-class="text-subtitle1"
+                placeholder="Build anything"
+                @keyup.enter.exact.prevent="handleSend"
+              >
+                <template #prepend>
+                  <q-btn flat round dense icon="add" @click="openImagePicker" />
+                </template>
 
-                <div class="col q-px-sm">
-                  <q-input
-                    v-model="composer"
-                    :dark="$q.dark.isActive"
-                    borderless
-                    autogrow
-                    placeholder="Build anything"
-                    @keyup.enter.exact.prevent="handleSend"
-                  />
-                </div>
-
-                <div class="col-auto">
+                <template #append>
                   <q-btn
+                    flat
                     round
-                    color="white"
-                    text-color="dark"
+                    dense
                     icon="send"
                     :loading="state.sending"
                     @click="handleSend"
                   />
-                </div>
-              </q-toolbar>
-            </div>
+                </template>
+              </q-input>
           </div>
         </div>
       </div>
@@ -251,8 +245,8 @@ const panelClass = computed(() =>
 const bannerClass = computed(() =>
   $q.dark.isActive ? 'bg-grey-9 text-grey-3' : 'bg-grey-2 text-dark',
 )
-const composerShellClass = computed(() =>
-  `${$q.dark.isActive ? 'bg-grey-9 text-white' : 'bg-white text-dark'} rounded overflow-hidden`,
+const composerInputClass = computed(() =>
+  `${$q.dark.isActive ? 'text-white' : 'text-dark'} q-px-sm`,
 )
 const centeredSystemMessage = computed(() => {
   const messages = activeChat.value?.messages || []
