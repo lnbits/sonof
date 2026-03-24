@@ -2,7 +2,7 @@
 
 Custom Nostr client for chatting to OpenClaw and getting it to make prs.
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/12943134-11f3-4cc5-9f55-223644c074c6" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/12943134-11f3-4cc5-9f55-223644c074c6" />
 
 ## Install the dependencies
 
